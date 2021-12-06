@@ -6,10 +6,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/styles.css">
+  <link rel="shortcut icon" href="./assets/img/favicon.svg" type="image/x-icon">
   <title>Pokémon</title>
 </head>
 <body>
-  
+  <header class="header__container">
+    <div class="header__content container">
+      <a class="logo" href="#"
+        ><img
+          class="logo-image"
+          src="./assets/img/logo.svg"
+          alt="Logo Pokemon"
+      /></a>
+
+      <nav class="nav__container">
+        <ul class="nav__content">
+          <li><a href="#" class="nav-links">Home</a></li>
+          <li><a href="#generations" class="nav-links">Generations</a></li>
+          <li><a href="#" class="nav-links">Pokedex</a></li>
+          <li><a href="#about" class="nav-links">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="search__container">
+        <div class="search__content">
+          <input
+            type="text"
+            name="pokemon"
+            id="input-pokemon"
+            placeholder="Pokemon"
+          />
+          <a href="#" class="search-btn" id="search-btn"><i class="ri-search-line"></i></a>
+        </div>
+      </div>
+    </div>
+  </header>
 
   <script src="./assets/js/main.js"></script>
 </body>
