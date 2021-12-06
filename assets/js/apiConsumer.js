@@ -1,0 +1,30 @@
+const baseURL = "https://pokeapi.co/api/v2/pokemon/";
+const speciesURL = "https://pokeapi.co/api/v2/pokemon-species/";
+
+let pokemonId = Math.floor(Math.random() * (898 - 1 + 1)) + 1;
+
+async function getPokemon(name) {
+  const res = fetch(`${baseURL}${name}`)
+    .then((response) => response.json())
+    .then((data) => data)
+    .catch(() => 404);
+
+  return res;
+}
+
+async function getPokemonDescription(pokemonId) {
+  let data = null;
+  await fetch(`${speciesURL}${pokemonId}/`)
+    .then((response) => response.json())
+    .then((res) => {
+      const descriptions = res.flavor_text_entries;
+      descriptions.forEach((element) => {
+        if (element.language.name === "en") {
+          data = element.flavor_text;
+        }
+      });
+    })
+    .catch((error) => error);
+
+  return data;
+}

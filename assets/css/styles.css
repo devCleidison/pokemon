@@ -353,19 +353,21 @@ main {
 
   padding-top: 12rem;
 
-  /* visibility: hidden; */
-  /* opacity: 0; */
+  visibility: hidden;
+  opacity: 0;
   transition: .3s;
 
   background-color: var(--light-color);
 }
 
-.show-modal{
-  visibility: initial;
+.show-modal-container{
+  visibility: visible;
   opacity: 1;
 
   top: 8rem;
 }
+
+
 .close-modal{
   position: absolute;
   bottom: 1.5rem;
@@ -526,6 +528,8 @@ main {
 
   padding: 3rem 5rem;
 
+  visibility: hidden;
+
   border-radius: 1rem;
 
   position: relative;
@@ -541,6 +545,7 @@ main {
 
   bottom: 2rem;
 }
+
 
 
 
