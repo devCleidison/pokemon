@@ -1,247 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/css/styles.css">
-  <link rel="shortcut icon" href="./assets/img/favicon.svg" type="image/x-icon">
-  <title>Pokémon</title>
-</head>
-<body>
-  <header class="header__container">
-    <div class="header__content container">
-      <a class="logo" href="#"
-        ><img
-          class="logo-image"
-          src="./assets/img/logo.svg"
-          alt="Logo Pokemon"
-      /></a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/img/favicon.svg"
+      type="image/x-icon"
+    />
+    <title>Pokémon</title>
+  </head>
+  <body>
+    <header class="header__container">
+      <div class="header__content container">
+        <a class="logo" href="#"
+          ><img
+            class="logo-image"
+            src="./assets/img/logo.svg"
+            alt="Logo Pokemon"
+        /></a>
 
-      <nav class="nav__container">
-        <ul class="nav__content">
-          <li><a href="#" class="nav-links">Home</a></li>
-          <li><a href="#generations" class="nav-links">Generations</a></li>
-          <li><a href="#" class="nav-links">Pokedex</a></li>
-          <li><a href="#about" class="nav-links">About</a></li>
-        </ul>
-      </nav>
+        <nav class="nav__container">
+          <ul class="nav__content">
+            <li><a href="#" class="nav-links">Home</a></li>
+            <li><a href="#generations" class="nav-links">Generations</a></li>
+            <li><a href="#" class="nav-links">Pokedex</a></li>
+            <li><a href="#about" class="nav-links">About</a></li>
+          </ul>
+        </nav>
 
-      <div class="search__container">
-        <div class="search__content">
-          <input
-            type="text"
-            name="pokemon"
-            id="input-pokemon"
-            placeholder="Pokemon"
-          />
-          <a href="#" class="search-btn" id="search-btn"><i class="ri-search-line"></i></a>
+        <div class="search__container">
+          <div class="search__content">
+            <input
+              type="text"
+              name="pokemon"
+              id="input-pokemon"
+              placeholder="Pokemon"
+            />
+            <a href="#" class="search-btn" id="search-btn"
+              ><i class="ri-search-line"></i
+            ></a>
+          </div>
         </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="home__container" id="home">
+        <div class="home__content container">
+          <div class="home__title__container">
+            <h5 class="home__subtitle">Pokemon</h5>
+            <h1 class="home__title">Gotta catch 'em all!</h1>
+          </div>
+          <img src="./assets/img/home-image.svg" alt="Persons image" />
+        </div>
+      </section>
+
+      <section class="generations__container" id="generations">
+        <div class="generations__content container">
+          <img class="bg-image bg1" src="./assets/img/bg1.svg" alt="" />
+          <img class="bg-image bg2" src="./assets/img/bg2.svg" alt="" />
+          <h2 class="section__title">Generations</h2>
+
+          <div class="generations__cards__container">
+            <div class="generations__line"></div>
+
+            <div class="cards__container">
+              <img src="./assets/img/card1.jpg" alt="Pokemon image" />
+              <div class="dot"></div>
+              <div class="card__text__container">
+                <h3 class="card__title">Generation I</h3>
+                <p class="card__description">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Voluptates nobis architecto, ea provident enim, natus
+                  consequatur tenetur aliquam consequuntur odit hic quia
+                  perferendis tempore! Suscipit ducimus veritatis nulla
+                  doloremque veniam.
+                </p>
+              </div>
+            </div>
+
+            <div class="cards__container">
+              <img
+                class="inverter-image"
+                src="./assets/img/card2.jpg"
+                alt="Pokemon image"
+              />
+              <div class="dot"></div>
+              <div class="card__text__container inverter-text">
+                <h3 class="card__title">Generation II</h3>
+                <p class="card__description">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Voluptates nobis architecto, ea provident enim, natus
+                  consequatur tenetur aliquam consequuntur odit hic quia
+                  perferendis tempore! Suscipit ducimus veritatis nulla
+                  doloremque veniam.
+                </p>
+              </div>
+            </div>
+
+            <div class="cards__container">
+              <img src="./assets/img/card3.jpg" alt="Pokemon image" />
+              <div class="dot"></div>
+              <div class="card__text__container">
+                <h3 class="card__title">Generation III</h3>
+                <p class="card__description">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Voluptates nobis architecto, ea provident enim, natus
+                  consequatur tenetur aliquam consequuntur odit hic quia
+                  perferendis tempore! Suscipit ducimus veritatis nulla
+                  doloremque veniam.
+                </p>
+              </div>
+            </div>
+
+            <div class="cards__container">
+              <img
+                class="inverter-image"
+                src="./assets/img/card4.jpg"
+                alt="Pokemon image"
+              />
+              <div class="dot"></div>
+              <div class="card__text__container inverter-text">
+                <h3 class="card__title">Generation IV</h3>
+                <p class="card__description">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Voluptates nobis architecto, ea provident enim, natus
+                  consequatur tenetur aliquam consequuntur odit hic quia
+                  perferendis tempore! Suscipit ducimus veritatis nulla
+                  doloremque veniam.
+                </p>
+              </div>
+            </div>
+
+            <div class="cards__container">
+              <img src="./assets/img/card5.jpg" alt="Pokemon image" />
+              <div class="dot"></div>
+              <div class="card__text__container">
+                <h3 class="card__title">Generation V</h3>
+                <p class="card__description">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Voluptates nobis architecto, ea provident enim, natus
+                  consequatur tenetur aliquam consequuntur odit hic quia
+                  perferendis tempore! Suscipit ducimus veritatis nulla
+                  doloremque veniam.
+                </p>
+              </div>
+            </div>
+
+            <div class="cards__container">
+              <img
+                class="inverter-image"
+                src="./assets/img/card6.jpg"
+                alt="Pokemon image"
+              />
+              <div class="dot"></div>
+              <div class="card__text__container inverter-text">
+                <h3 class="card__title">Generation VI</h3>
+                <p class="card__description">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Voluptates nobis architecto, ea provident enim, natus
+                  consequatur tenetur aliquam consequuntur odit hic quia
+                  perferendis tempore! Suscipit ducimus veritatis nulla
+                  doloremque veniam.
+                </p>
+              </div>
+            </div>
+
+            <div class="cards__container">
+              <img src="./assets/img/card7.jpg" alt="Pokemon image" />
+              <div class="dot"></div>
+              <div class="card__text__container">
+                <h3 class="card__title">Generation VII</h3>
+                <p class="card__description">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Voluptates nobis architecto, ea provident enim, natus
+                  consequatur tenetur aliquam consequuntur odit hic quia
+                  perferendis tempore! Suscipit ducimus veritatis nulla
+                  doloremque veniam.
+                </p>
+              </div>
+            </div>
+
+            <div class="cards__container">
+              <img
+                class="inverter-image"
+                src="./assets/img/card8.jpg"
+                alt="Pokemon image"
+              />
+              <div class="dot"></div>
+              <div class="card__text__container inverter-text">
+                <h3 class="card__title">Generation VIII</h3>
+                <p class="card__description">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Voluptates nobis architecto, ea provident enim, natus
+                  consequatur tenetur aliquam consequuntur odit hic quia
+                  perferendis tempore! Suscipit ducimus veritatis nulla
+                  doloremque veniam.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about__container" id="about">
+        <div class="about__content container">
+          <h2 class="section__title">About</h2>
+          <div class="history__container">
+            <div class="history__content">
+              <video
+                controls
+                muted
+                preload="auto"
+                loop
+                poster="./assets/img/poster-video.png"
+                src="./assets/video/video.mp4"
+              ></video>
+              <p class="history__description">
+                It is a long established fact that a reader will be distracted
+                by the readable content of a page when looking at its layout.
+                The point of using Lorem Ipsum is that it has a more-or-less
+                normal distribution of letters, as opposed to using 'Content
+                here, content here', making it look like readable English. Many
+                desktop publishing packages and web page editors now use Lorem
+                Ipsum as their default model text, and a search for 'lorem
+                ipsum' will uncover many web sites still in their infancy.
+                Various versions have evolved over the years, sometimes by
+                accident, sometimes on purpose (injected humour and the like).
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal__container">
+      <div class="modal__pokemon" id="modal-pokemon">
+        <i class="i-container">
+          <h2 class="modal__title">Who is this pokemon?</h2>
+          <i class="i-left"></i>
+          <i class="i-right"></i>
+        </i>
+
+        <div class="pokemon__image">
+          <img id="pokemon-img" src="./assets/img/pokeball.svg" alt="Pokemon image" />
+        </div>
+        <div class="pokemon__container">
+          <h2 class="pokemon__name">???</h2>
+          <p class="pokemon__description">
+            ...
+          </p>
+        </div>
+
+        <a href="#" class="close-modal" id="close-modal"><i class="ri-close-line"></i></a>
+      </div>
+
+
+      <div class="modal__content" id="modal-fail">
+        <h2 class="modal__title">Pokemon not found!</h2>
+        <img src="./assets/img/error.gif" alt="Image Fail">
+        <a href="#" class="close-modal" id="close-modal"><i class="ri-close-line"></i></a>
       </div>
     </div>
-  </header>
 
-  <main>
-    <section class="home__container" id="home">
-      <div class="home__content container">
-        <div class="home__title__container">
-          <h5 class="home__subtitle">Pokemon</h5>
-          <h1 class="home__title">Gotta catch 'em all!</h1>
-        </div>
-        <img src="./assets/img/home-image.svg" alt="Persons image" />
+
+    
+    <footer class="footer__container">
+      <div class="footer__content container">
+        <i class="ri-copyright-line"></i>
+        <p class="copy">2021 devCleidison. All rights reserved.</p>
       </div>
-    </section>
-
-
-    <section class="generations__container" id="generations">
-      <div class="generations__content container">
-        <img class="bg-image bg1" src="./assets/img/bg1.svg" alt="" />
-        <img class="bg-image bg2" src="./assets/img/bg2.svg" alt="" />
-        <h2 class="section__title">Generations</h2>
-
-        <div class="generations__cards__container">
-          <div class="generations__line"></div>
-
-          <div class="cards__container">
-            <img src="./assets/img/card1.jpg" alt="Pokemon image" />
-            <div class="dot"></div>
-            <div class="card__text__container">
-              <h3 class="card__title">Generation I</h3>
-              <p class="card__description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Voluptates nobis architecto, ea provident enim, natus
-                consequatur tenetur aliquam consequuntur odit hic quia
-                perferendis tempore! Suscipit ducimus veritatis nulla
-                doloremque veniam.
-              </p>
-            </div>
-          </div>
-
-          <div class="cards__container">
-            <img
-              class="inverter-image"
-              src="./assets/img/card2.jpg"
-              alt="Pokemon image"
-            />
-            <div class="dot"></div>
-            <div class="card__text__container inverter-text">
-              <h3 class="card__title">Generation II</h3>
-              <p class="card__description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Voluptates nobis architecto, ea provident enim, natus
-                consequatur tenetur aliquam consequuntur odit hic quia
-                perferendis tempore! Suscipit ducimus veritatis nulla
-                doloremque veniam.
-              </p>
-            </div>
-          </div>
-
-          <div class="cards__container">
-            <img src="./assets/img/card3.jpg" alt="Pokemon image" />
-            <div class="dot"></div>
-            <div class="card__text__container">
-              <h3 class="card__title">Generation III</h3>
-              <p class="card__description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Voluptates nobis architecto, ea provident enim, natus
-                consequatur tenetur aliquam consequuntur odit hic quia
-                perferendis tempore! Suscipit ducimus veritatis nulla
-                doloremque veniam.
-              </p>
-            </div>
-          </div>
-
-          <div class="cards__container">
-            <img
-              class="inverter-image"
-              src="./assets/img/card4.jpg"
-              alt="Pokemon image"
-            />
-            <div class="dot"></div>
-            <div class="card__text__container inverter-text">
-              <h3 class="card__title">Generation IV</h3>
-              <p class="card__description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Voluptates nobis architecto, ea provident enim, natus
-                consequatur tenetur aliquam consequuntur odit hic quia
-                perferendis tempore! Suscipit ducimus veritatis nulla
-                doloremque veniam.
-              </p>
-            </div>
-          </div>
-
-          <div class="cards__container">
-            <img src="./assets/img/card5.jpg" alt="Pokemon image" />
-            <div class="dot"></div>
-            <div class="card__text__container">
-              <h3 class="card__title">Generation V</h3>
-              <p class="card__description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Voluptates nobis architecto, ea provident enim, natus
-                consequatur tenetur aliquam consequuntur odit hic quia
-                perferendis tempore! Suscipit ducimus veritatis nulla
-                doloremque veniam.
-              </p>
-            </div>
-          </div>
-
-          <div class="cards__container">
-            <img
-              class="inverter-image"
-              src="./assets/img/card6.jpg"
-              alt="Pokemon image"
-            />
-            <div class="dot"></div>
-            <div class="card__text__container inverter-text">
-              <h3 class="card__title">Generation VI</h3>
-              <p class="card__description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Voluptates nobis architecto, ea provident enim, natus
-                consequatur tenetur aliquam consequuntur odit hic quia
-                perferendis tempore! Suscipit ducimus veritatis nulla
-                doloremque veniam.
-              </p>
-            </div>
-          </div>
-
-          <div class="cards__container">
-            <img src="./assets/img/card7.jpg" alt="Pokemon image" />
-            <div class="dot"></div>
-            <div class="card__text__container">
-              <h3 class="card__title">Generation VII</h3>
-              <p class="card__description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Voluptates nobis architecto, ea provident enim, natus
-                consequatur tenetur aliquam consequuntur odit hic quia
-                perferendis tempore! Suscipit ducimus veritatis nulla
-                doloremque veniam.
-              </p>
-            </div>
-          </div>
-
-          <div class="cards__container">
-            <img
-              class="inverter-image"
-              src="./assets/img/card8.jpg"
-              alt="Pokemon image"
-            />
-            <div class="dot"></div>
-            <div class="card__text__container inverter-text">
-              <h3 class="card__title">Generation VIII</h3>
-              <p class="card__description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Voluptates nobis architecto, ea provident enim, natus
-                consequatur tenetur aliquam consequuntur odit hic quia
-                perferendis tempore! Suscipit ducimus veritatis nulla
-                doloremque veniam.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="about__container" id="about">
-      <div class="about__content container">
-        <h2 class="section__title">About</h2>
-        <div class="history__container">
-          <div class="history__content">
-            <video
-              controls
-              muted
-              preload="auto"
-              loop
-              poster="./assets/img/poster-video.png"
-              src="./assets/video/video.mp4"
-            ></video>
-            <p class="history__description">
-              It is a long established fact that a reader will be distracted
-              by the readable content of a page when looking at its layout.
-              The point of using Lorem Ipsum is that it has a more-or-less
-              normal distribution of letters, as opposed to using 'Content
-              here, content here', making it look like readable English. Many
-              desktop publishing packages and web page editors now use Lorem
-              Ipsum as their default model text, and a search for 'lorem
-              ipsum' will uncover many web sites still in their infancy.
-              Various versions have evolved over the years, sometimes by
-              accident, sometimes on purpose (injected humour and the like).
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-
-
-  <footer class="footer__container">
-    <div class="footer__content container">
-      <i class="ri-copyright-line"></i>
-      <p class="copy">2021 devCleidison. All rights reserved.</p>
-    </div>
-  </footer>
-  <script src="./assets/js/main.js"></script>
-</body>
+    </footer>
+    <script src="./assets/js/main.js"></script>
+  </body>
 </html>
