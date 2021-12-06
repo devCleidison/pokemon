@@ -324,3 +324,27 @@ main{
 
   width: 400px;
 }
+
+
+
+
+/* Footer */
+.footer__container{
+  width: 100%;
+
+  color: var(--text-color-alt);
+  background-color: var(--gray-color);
+}
+.footer__content{
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 3rem 0;
+
+  gap: .5rem;
+
+  font-size: 1.6rem;
+}
