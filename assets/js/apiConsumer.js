@@ -1,16 +1,19 @@
-const baseURL = "https://pokeapi.co/api/v2/pokemon/";
+const baseURL = "https://pokeapi.co/api/v2/pokemon";
 const speciesURL = "https://pokeapi.co/api/v2/pokemon-species/";
 
 let pokemonId = Math.floor(Math.random() * (898 - 1 + 1)) + 1;
 
 async function getPokemon(name) {
-  const res = fetch(`${baseURL}${name}`)
+  const res = fetch(`${baseURL}/${name}`)
     .then((response) => response.json())
     .then((data) => data)
     .catch(() => 404);
 
   return res;
 }
+
+
+
 
 async function getPokemonDescription(pokemonId) {
   let data = null;
@@ -27,4 +30,23 @@ async function getPokemonDescription(pokemonId) {
     .catch((error) => error);
 
   return data;
+}
+
+
+
+
+async function getPokedex(count) {
+  let data = null
+  if(count !== null){
+    data = await fetch(`${baseURL}?limit=12&offset=${count}`)
+    .then((response) => response.json())
+    .then((data) => data)
+    .catch((error) => console.log(error));
+  } else{
+    data = await fetch(`${baseURL}?limit=12&offset=1`)
+    .then((response) => response.json())
+    .then((data) => data)
+    .catch((error) => console.log(error));
+  }
+  return data
 }

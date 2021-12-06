@@ -7,65 +7,61 @@ document.addEventListener("keyup", (e) => {
   }
 });
 
+
+
 function showModal(modalContainer, searchId) {
-  const body = document.querySelector('body')
+  const body = document.querySelector("body");
   const container = document.getElementById(modalContainer);
   const search = document.getElementById(searchId);
   const modalFail = document.getElementById("modal-fail");
-  const modalPokemon = document.getElementById('modal-pokemon')
+  const modalPokemon = document.getElementById("modal-pokemon");
 
   const name = document.getElementById("input-pokemon");
 
-  if(search){
-    search.addEventListener('click', () => {
-      if(name.value === ''){
-        modalFail.style.visibility = 'visible'
-      } else{
-        const data = getPokemon(name.value.toLowerCase())
+  if (search) {
+    search.addEventListener("click", () => {
+      if (name.value === "") {
+        modalFail.style.visibility = "visible";
+      } else {
+        const data = getPokemon(name.value.toLowerCase());
 
-        data.then(response => {
-          if(response === 404){
-            modalFail.style.visibility = 'visible'
-          } else{
-            modalPokemon.style.visibility = 'visible'
+        data.then((response) => {
+          if (response === 404) {
+            modalFail.style.visibility = "visible";
+          } else {
+            modalPokemon.style.visibility = "visible";
             showSearchPokemon(data);
           }
-        })
+        });
       }
 
-      container.classList.add('show-modal-container')
-      body.style.overflow = 'hidden'
-    })
+      container.classList.add("show-modal-container");
+      body.style.overflow = "hidden";
+    });
   }
 }
 
 showModal("modal-container", "search-btn");
 
-
-
-
 function hideModal(closeId, modalPokemonId, modalFailId) {
-  const body = document.querySelector('body')
-  const container = document.getElementById('modal-container');
+  const body = document.querySelector("body");
+  const container = document.getElementById("modal-container");
   const close = document.querySelectorAll(closeId);
   const modalPokemon = document.getElementById(modalPokemonId);
   const modalFail = document.getElementById(modalFailId);
 
   close.forEach((toggle) => {
     toggle.addEventListener("click", () => {
-      container.classList.remove('show-modal-container')
-      modalFail.style.visibility = 'hidden'
-      modalPokemon.style.visibility = 'hidden'
-      body.style.overflowY = 'initial'
+      container.classList.remove("show-modal-container");
+      modalFail.style.visibility = "hidden";
+      modalPokemon.style.visibility = "hidden";
+      body.style.overflowY = "initial";
       restartPokemon();
     });
   });
 }
 
 hideModal(".close-modal", "modal-pokemon", "modal-fail");
-
-
-
 
 async function showSearchPokemon(data) {
   const newPokemon = await data;
@@ -104,3 +100,53 @@ function restartPokemon() {
     imgPokemon.src = "./assets/img/pokeball.svg";
   }, 1000);
 }
+
+
+
+// Pokedex
+let count = null
+
+async function getPokemons() {
+  const pokedex = getPokedex(count);
+
+  pokedex.then((response) => {
+    count += response.results.length + 1
+    response.results.forEach((item) => setPokemons(item));
+  });
+}
+
+getPokemons();
+
+
+
+
+function setPokemons(data) {
+  const pokemon = getPokemon(data.name);
+  const pokedexContainer = document.querySelector(".pokedex__content");
+
+  pokemon.then((response) => {
+    const card = document.createElement("div");
+    card.classList.add("card__pokedex");
+
+    const title = document.createElement("h4");
+    title.classList.add("card__pokedex__title");
+    title.innerHTML = response.name.toUpperCase()
+
+    const image = document.createElement("img");
+
+    if (response.sprites.other.dream_world.front_default === null) {
+      image.src = response.sprites.front_default;
+    } else {
+      image.src = response.sprites.other.dream_world.front_default;
+    }
+
+    card.appendChild(title);
+    card.appendChild(image);
+
+    setTimeout(() => {
+      pokedexContainer.appendChild(card);
+    }, 100);
+  });
+}
+
+
