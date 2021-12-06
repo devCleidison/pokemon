@@ -122,3 +122,40 @@ a{
   font-size: 1.8rem;
   color: var(--text-color-alt);
 }
+
+
+
+
+/* Home */
+main{
+  width: 100%;
+
+  position: relative;
+  top: 8rem;
+  left: 0;
+}
+.home__container{
+  width: 100%;
+}
+.home__content{
+  margin: auto;
+  
+  padding: 7rem 9rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  color: var(--text-color);
+}
+
+.home__subtitle{
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.home__title{
+  font-size: 7rem;
+  font-weight: 700;
+
+  line-height: 8rem;
+}
