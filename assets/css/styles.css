@@ -738,11 +738,24 @@ main {
 }
 
 @media screen and (max-width: 863px) {
+  .nav__content {
+    gap: 2rem;
+  }
+  .nav-links {
+    font-size: 1.6rem;
+  }
+
+  .search__content {
+    padding: 1rem 0.5rem;
+    width: 180px;
+  }
   .search__content input {
     padding: 0 1rem 0 0.4rem;
+    width: 90%;
 
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
+
 
   .home__content img {
     width: 350px;
