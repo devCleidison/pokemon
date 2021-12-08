@@ -1,6 +1,12 @@
 document.addEventListener("keyup", (e) => {
   const search = document.getElementById("search-btn");
   const name = document.getElementById("input-pokemon");
+  const modalPokemon = document.getElementById("modal-pokemon");
+  const modalFail = document.getElementById("modal-fail");
+
+  modalFail.style.visibility = "hidden";
+  modalPokemon.style.visibility = "hidden";
+  
   const searchContainer = document.getElementById("search-container");
 
   if (e.code === "Enter" && name.value !== "") {

@@ -473,6 +473,7 @@ main {
   position: absolute;
 
   visibility: hidden;
+  transition: .3s;
 
   display: flex;
   flex-direction: column;
@@ -609,6 +610,7 @@ main {
   padding: 3rem 5rem;
 
   visibility: hidden;
+  transition: .3s;
 
   border-radius: 1rem;
 
