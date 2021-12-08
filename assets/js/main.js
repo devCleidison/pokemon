@@ -1,16 +1,21 @@
 document.addEventListener("keyup", (e) => {
   const search = document.getElementById("search-btn");
   const name = document.getElementById("input-pokemon");
+  const modalContainer = document.getElementById("modal-container");
   const modalPokemon = document.getElementById("modal-pokemon");
   const modalFail = document.getElementById("modal-fail");
 
+  const searchContainer = document.getElementById("search-container");
+
+  modalContainer.classList.remove("show-modal-container");
   modalFail.style.visibility = "hidden";
   modalPokemon.style.visibility = "hidden";
-  
-  const searchContainer = document.getElementById("search-container");
+
+  restartPokemon();
 
   if (e.code === "Enter" && name.value !== "") {
     searchContainer.classList.remove("show-menu");
+
     search.click();
   }
 });
@@ -99,14 +104,11 @@ function restartPokemon() {
   const name = document.querySelector(".pokemon__name");
   const descPokemon = document.querySelector(".pokemon__description");
 
-  inputName.value = "";
-  setTimeout(() => {
-    name.innerHTML = "???";
-    descPokemon.innerHTML = "...";
+  name.innerHTML = "???";
+  descPokemon.innerHTML = "...";
 
-    imgPokemon.classList.remove("rotate-pokeball");
-    imgPokemon.src = "./assets/img/pokeball.svg";
-  }, 1000);
+  imgPokemon.classList.remove("rotate-pokeball");
+  imgPokemon.src = "./assets/img/pokeball.svg";
 }
 
 let count = null;
