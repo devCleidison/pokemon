@@ -1,13 +1,13 @@
 document.addEventListener("keyup", (e) => {
   const search = document.getElementById("search-btn");
   const name = document.getElementById("input-pokemon");
+  const searchContainer = document.getElementById('search-container')
 
   if (e.code === "Enter" && name.value !== "") {
+    searchContainer.classList.remove('show-menu')
     search.click();
   }
 });
-
-
 
 function showModal(modalContainer, searchId) {
   const body = document.querySelector("body");
@@ -15,6 +15,7 @@ function showModal(modalContainer, searchId) {
   const search = document.getElementById(searchId);
   const modalFail = document.getElementById("modal-fail");
   const modalPokemon = document.getElementById("modal-pokemon");
+  const searchContainer = document.getElementById('search-container')
 
   const name = document.getElementById("input-pokemon");
 
@@ -36,6 +37,7 @@ function showModal(modalContainer, searchId) {
       }
 
       container.classList.add("show-modal-container");
+      searchContainer.classList.remove('show-menu')
       body.style.overflow = "hidden";
     });
   }
@@ -101,24 +103,19 @@ function restartPokemon() {
   }, 1000);
 }
 
-
-
 // Pokedex
-let count = null
+let count = null;
 
 async function getPokemons() {
   const pokedex = getPokedex(count);
 
   pokedex.then((response) => {
-    count += response.results.length + 1
+    count += response.results.length + 1;
     response.results.forEach((item) => setPokemons(item));
   });
 }
 
 getPokemons();
-
-
-
 
 function setPokemons(data) {
   const pokemon = getPokemon(data.name);
@@ -130,7 +127,7 @@ function setPokemons(data) {
 
     const title = document.createElement("h4");
     title.classList.add("card__pokedex__title");
-    title.innerHTML = response.name.toUpperCase()
+    title.innerHTML = response.name.toUpperCase();
 
     const image = document.createElement("img");
 
@@ -150,3 +147,76 @@ function setPokemons(data) {
 }
 
 
+
+
+const logo = document.querySelector(".logo");
+logo.addEventListener("click", scrollToId);
+
+const navLinks = document.querySelectorAll(".nav-links");
+navLinks.forEach((link) => {
+  link.addEventListener("click", scrollToId);
+});
+
+function getScrollToByHref(element) {
+  const id = element.getAttribute("href");
+  return document.querySelector(id).offsetTop;
+}
+
+function scrollToId(event) {
+  event.preventDefault();
+
+  const to = getScrollToByHref(event.target) - 60;
+
+  window.scroll({
+    top: to,
+    behavior: "smooth",
+  });
+}
+
+
+
+
+
+function showMenu(navId, toggleId){
+  const nav = document.getElementById(navId)
+  const toggle = document.getElementById(toggleId)
+  const searchContainer = document.getElementById('search-container')
+
+  if(toggle && nav){
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('show-menu')
+      searchContainer.classList.remove('show-menu')
+    })
+  }
+}
+
+showMenu('nav-menu', 'nav-toggle')
+
+
+const navLink = document.querySelectorAll(".nav-links");
+
+function linkAction() {
+  const navMenu = document.getElementById("nav-menu");
+  
+  navMenu.classList.remove("show-menu");
+}
+navLink.forEach((n) => n.addEventListener("click", linkAction));
+
+
+
+
+
+function showSearchContainer(searchId, searchContainerId){
+  const search = document.getElementById(searchId)
+  const searchContainer = document.getElementById(searchContainerId)
+  const navMenu = document.getElementById("nav-menu");
+
+  if(search && searchContainer){
+    search.addEventListener('click', () => {
+      searchContainer.classList.toggle('show-menu')
+      navMenu.classList.remove("show-menu");
+    })
+  }
+}
+
+showSearchContainer('search-toggle', 'search-container')

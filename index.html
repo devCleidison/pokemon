@@ -19,34 +19,45 @@
   <body>
     <header class="header__container">
       <div class="header__content container">
-        <a class="logo" href="#"
+        <a class="logo" href="#home"
           ><img
             class="logo-image"
             src="./assets/img/logo.svg"
             alt="Logo Pokemon"
         /></a>
 
-        <nav class="nav__container">
+        <nav class="nav__container" id="nav-menu">
           <ul class="nav__content">
-            <li><a href="#" class="nav-links">Home</a></li>
+            <li><a href="#home" class="nav-links">Home</a></li>
             <li><a href="#generations" class="nav-links">Generations</a></li>
             <li><a href="#pokedex" class="nav-links">Pokedex</a></li>
             <li><a href="#about" class="nav-links">About</a></li>
           </ul>
         </nav>
 
-        <div class="search__container">
-          <div class="search__content">
-            <input
-              type="text"
-              name="pokemon"
-              id="input-pokemon"
-              placeholder="Pokemon"
-            />
-            <a href="#" class="search-btn" id="search-btn"
-              ><i class="ri-search-line"></i
-            ></a>
+        <div class="search__container" id="search-container">
+          <div class="search-content">
+            <div class="search__content">
+              <input
+                type="text"
+                name="pokemon"
+                id="input-pokemon"
+                placeholder="Pokemon"
+              />
+              <a href="#" class="search-btn" id="search-btn"
+                ><i class="ri-search-line"></i
+              ></a>
+            </div>
           </div>
+        </div>
+
+        <div class="toggles">
+          <button class="toggle" id="search-toggle">
+            <i class="ri-search-line"></i>
+          </button>
+          <button class="toggle" id="nav-toggle">
+            <i class="ri-menu-3-line"></i>
+          </button>
         </div>
       </div>
     </header>
@@ -210,16 +221,13 @@
         </div>
       </section>
 
-
       <section class="pokedex__container" id="pokedex">
         <h2 class="pokedex__title">Pokédex</h2>
-        <div class="pokedex__content container">
-
-        </div>
-        <button class="more-btn" onclick="getPokemons()"><i class="ri-add-line"></i></button>
+        <div class="pokedex__content container"></div>
+        <button class="more-btn" onclick="getPokemons()">
+          <i class="ri-add-line"></i>
+        </button>
       </section>
-
-
 
       <section class="about__container" id="about">
         <div class="about__content container">
@@ -261,35 +269,37 @@
         </i>
 
         <div class="pokemon__image">
-          <img id="pokemon-img" src="./assets/img/pokeball.svg" alt="Pokemon image" />
+          <img
+            id="pokemon-img"
+            src="./assets/img/pokeball.svg"
+            alt="Pokemon image"
+          />
         </div>
         <div class="pokemon__container">
           <h2 class="pokemon__name">???</h2>
-          <p class="pokemon__description">
-            ...
-          </p>
+          <p class="pokemon__description">...</p>
         </div>
 
-        <a href="#" class="close-modal" id="close-modal"><i class="ri-close-line"></i></a>
+        <button class="close-modal" id="close-modal">
+          <i class="ri-close-line"></i>
+        </button>
       </div>
-
 
       <div class="modal__content" id="modal-fail">
         <h2 class="modal__title">Pokemon not found!</h2>
-        <img src="./assets/img/error.gif" alt="Image Fail">
-        <a href="#" class="close-modal" id="close-modal"><i class="ri-close-line"></i></a>
+        <img src="./assets/img/error.gif" alt="Image Fail" />
+        <button class="close-modal" id="close-modal">
+          <i class="ri-close-line"></i>
+        </button>
       </div>
     </div>
 
-
-    
     <footer class="footer__container">
       <div class="footer__content container">
         <i class="ri-copyright-line"></i>
         <p class="copy">2021 devCleidison. All rights reserved.</p>
       </div>
     </footer>
-
 
     <script src="./assets/js/apiConsumer.js"></script>
     <script src="./assets/js/main.js"></script>
