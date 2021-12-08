@@ -1,10 +1,10 @@
 document.addEventListener("keyup", (e) => {
   const search = document.getElementById("search-btn");
   const name = document.getElementById("input-pokemon");
-  const searchContainer = document.getElementById('search-container')
+  const searchContainer = document.getElementById("search-container");
 
   if (e.code === "Enter" && name.value !== "") {
-    searchContainer.classList.remove('show-menu')
+    searchContainer.classList.remove("show-menu");
     search.click();
   }
 });
@@ -15,7 +15,7 @@ function showModal(modalContainer, searchId) {
   const search = document.getElementById(searchId);
   const modalFail = document.getElementById("modal-fail");
   const modalPokemon = document.getElementById("modal-pokemon");
-  const searchContainer = document.getElementById('search-container')
+  const searchContainer = document.getElementById("search-container");
 
   const name = document.getElementById("input-pokemon");
 
@@ -37,7 +37,7 @@ function showModal(modalContainer, searchId) {
       }
 
       container.classList.add("show-modal-container");
-      searchContainer.classList.remove('show-menu')
+      searchContainer.classList.remove("show-menu");
       body.style.overflow = "hidden";
     });
   }
@@ -103,7 +103,6 @@ function restartPokemon() {
   }, 1000);
 }
 
-// Pokedex
 let count = null;
 
 async function getPokemons() {
@@ -146,9 +145,6 @@ function setPokemons(data) {
   });
 }
 
-
-
-
 const logo = document.querySelector(".logo");
 logo.addEventListener("click", scrollToId);
 
@@ -173,50 +169,41 @@ function scrollToId(event) {
   });
 }
 
+function showMenu(navId, toggleId) {
+  const nav = document.getElementById(navId);
+  const toggle = document.getElementById(toggleId);
+  const searchContainer = document.getElementById("search-container");
 
-
-
-
-function showMenu(navId, toggleId){
-  const nav = document.getElementById(navId)
-  const toggle = document.getElementById(toggleId)
-  const searchContainer = document.getElementById('search-container')
-
-  if(toggle && nav){
-    toggle.addEventListener('click', () => {
-      nav.classList.toggle('show-menu')
-      searchContainer.classList.remove('show-menu')
-    })
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("show-menu");
+      searchContainer.classList.remove("show-menu");
+    });
   }
 }
 
-showMenu('nav-menu', 'nav-toggle')
-
+showMenu("nav-menu", "nav-toggle");
 
 const navLink = document.querySelectorAll(".nav-links");
 
 function linkAction() {
   const navMenu = document.getElementById("nav-menu");
-  
+
   navMenu.classList.remove("show-menu");
 }
 navLink.forEach((n) => n.addEventListener("click", linkAction));
 
-
-
-
-
-function showSearchContainer(searchId, searchContainerId){
-  const search = document.getElementById(searchId)
-  const searchContainer = document.getElementById(searchContainerId)
+function showSearchContainer(searchId, searchContainerId) {
+  const search = document.getElementById(searchId);
+  const searchContainer = document.getElementById(searchContainerId);
   const navMenu = document.getElementById("nav-menu");
 
-  if(search && searchContainer){
-    search.addEventListener('click', () => {
-      searchContainer.classList.toggle('show-menu')
+  if (search && searchContainer) {
+    search.addEventListener("click", () => {
+      searchContainer.classList.toggle("show-menu");
       navMenu.classList.remove("show-menu");
-    })
+    });
   }
 }
 
-showSearchContainer('search-toggle', 'search-container')
+showSearchContainer("search-toggle", "search-container");

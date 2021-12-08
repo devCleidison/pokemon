@@ -1,8 +1,6 @@
 const baseURL = "https://pokeapi.co/api/v2/pokemon";
 const speciesURL = "https://pokeapi.co/api/v2/pokemon-species/";
 
-let pokemonId = Math.floor(Math.random() * (898 - 1 + 1)) + 1;
-
 async function getPokemon(name) {
   const data = fetch(`${baseURL}/${name}`)
     .then((response) => response.json())
